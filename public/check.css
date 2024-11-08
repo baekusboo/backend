@@ -1,0 +1,393 @@
+/*Font styling for the body*/
+body {
+    font-family:"Times New Roman";
+}
+
+/*Container layout settings*/
+.container {
+    display:grid;
+    grid-template-areas:
+        "header"
+        "about"
+        "projects"
+        "education"
+        "experience"
+        "achievements"
+        "blogs"
+        "footer";
+    gap:15px;/*Add space between grid items*/
+    margin:10px auto;
+    padding:20px;
+    background-color:#8EC5FC;
+    background-image:linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0,0,0.8,1.2);
+    border-radius:10px;/*Rounded corners*/
+}
+
+/*Header layout*/
+header {
+    grid-area:header;
+    display:grid;
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+        "content menu-icon"
+        "nav nav";
+    background-color:#FFDEE9;
+    background-image:linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0.6, 0.8);
+    padding:10px;
+    border-radius:10px;
+}
+
+/*Header content styling*/
+.header-content {
+    grid-area:content;
+    text-align:center;
+    margin-top:0px;
+}
+
+.menu-icon {
+    display:none;
+    grid-area:menu-icon;
+}
+
+.menu-icon div {
+    width:30px;
+    height:4px;
+    background-color:black;
+    margin:5px 20px;
+}
+
+/*Navigation menu styles*/
+header nav {
+    grid-area:nav;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    justify-items:center;
+    margin-top:10px;
+}
+
+/*Navigation link styles*/
+header nav a {
+    text-decoration:none;
+    font-size:1.2rem;
+    color: #1b1b1e;
+    font-weight:bold;
+    padding:10px 15px;
+    border:3px solid #da4db4;
+    border-radius:8px;
+    background-color:rgba(252, 243, 249, 0.989);
+    box-shadow:2px 4px 8px rgba(219, 21, 167, 0.8);
+}
+
+/*Hover effect for navigation links*/
+header nav a:hover {
+    background-color:#e71994;
+    color:white;
+    box-shadow:0 6px 12px rgba(0, 0, 0.6, 0.8);
+}
+
+/* Mobile menu styles */
+@media screen and (max-width:768px) {
+    header {
+        grid-template-columns:1fr auto;
+    }
+    .menu-icon {
+        display:block;
+    }
+    header nav {
+        display:none;
+        grid-template-columns:1fr;
+    }
+    header nav.active {
+        display:grid;
+    }
+    header nav a {
+        margin:5px 0;
+        width:120px;
+        text-align:center;
+    }
+}
+
+/*Title and section heading styles*/
+h3,h4 {
+    display:inline-block;
+    padding:10px 20px;
+    border:2px solid #fc05ba;
+    border-radius:8px;
+    background-color:rgba(255, 255, 255, 0.8);
+    color:#101112;
+    box-shadow:2px 4px 8px rgba(230, 18, 153, 0.8);
+    margin-bottom:20px; 
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+/*About Me section styles*/
+#about {
+    grid-area:about;
+    padding:15px;
+    background-color:#FFDEE9;
+    background-image:linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    border-radius:10px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Grid layout for About Me section */
+.about-grid {
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+/* Photo styling */
+.photo {
+    text-align:center;
+}
+.photo img {
+    border-radius:10px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.photo p {
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/*Text and skills styling*/
+.about-text {
+    text-align:justify;
+}
+.about-text h4 {
+    margin-bottom:20px;
+    color:#333;
+}
+/* Grid layout for skills within About Me */
+.skills-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:40px;
+    max-width:300px;
+    line-height:23px; 
+}
+.skills-grid ul {
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+.about-text li::before {
+    content: "● ";
+    color: black;
+    font-weight:bold;
+    margin-right:5px;
+}
+
+/*Projects section grid*/
+#projects {
+    grid-area:projects;
+    padding:20px;
+    background-color:#FFDEE9;
+    background-image: linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgb(17, 17, 17);
+    border-radius:8px;
+}
+.project-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    justify-items:center;
+}
+/*Individual project styling*/
+.project {
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto 1fr; 
+    gap:0px;
+    text-align:center;
+    border:3px solid #121212;
+    padding:15px;
+    border-radius:10px;
+    background-color:#ffffff;
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+}
+.project a {
+    text-decoration:none;
+    color:#19191b;
+    font-weight:bold;
+    text-align:center;    
+}
+
+/*Project link hover effect*/
+.project a:hover {
+    text-decoration:none;
+    box-shadow:0 6px 12px rgba(0, 0, 0.6, 0.8); 
+}
+
+/*Project image styling*/
+.project img {
+    display:block;
+    margin:0 auto 10px;
+    border-radius:8px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    border:3px solid #d20ea4;
+}
+
+/*Education section grid*/
+#education {
+    grid-area:education;
+    padding:20px;
+    background-color:#FFDEE9;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius:10px;
+}
+.education-grid {
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:10px;
+    align-items:center;
+}
+.education-grid p{
+    margin:5px 0;
+}
+
+/*Experience section grid*/
+#experience {
+    grid-area:experience;
+    padding:15px;
+    background-color:#FFDEE9;
+    background-image: linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius:8px;
+}
+.experience-grid p {
+    margin:5px 0;
+}
+
+/*Achievements section grid*/
+#achievements {
+    grid-area:achievements;
+    padding:20px;
+    background-color:#FFDEE9;
+    background-image: linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius:8px;
+}
+.achievements-grid p {
+    margin:5px 0;
+}
+.star {
+    color:gold;
+}
+
+/*Blogs section grid*/
+#blogs {
+    grid-area:blogs;
+    padding:20px;
+    background-color:#FFDEE9;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius:8px;
+}
+
+.blogs-grid {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    align-items:center;
+}
+
+.blog-entry {
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:10px;
+    align-items:center;
+}
+
+/*Blog image styling*/
+.blog-entry img {
+    width:30px;
+    height:30px;
+}
+
+/* Blog entry link styling */
+.blog-entry a {
+    text-decoration:none;
+    color: #073b4c;
+    font-weight:bold;
+}
+
+.blog-entry a:hover {
+    text-decoration:underline;
+}
+
+/*Footer section*/
+footer {
+    grid-area:footer;
+    background-color:#FFDEE9;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+}
+/*Social media icons in footer*/
+.social-icons {
+    display:grid;
+    grid-template-columns:repeat(5, auto);
+    justify-content:center;
+    gap:300px;
+    margin-bottom:10px;
+}
+.social-icons img {
+    width:30px;
+    height:30px;
+}
+footer p {
+    margin:5px 0;
+    color:#073b4c;
+}
+
+/*Media query for responsiveness*/
+@media (max-width:768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "about"
+            "projects"
+            "education"
+            "experience"
+            "achievements"
+            "blogs"
+            "footer";
+    }
+    header {
+        grid-template-columns:1fr;
+        align-items: center;
+        gap:0px;
+    }
+    header nav {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+    .about-grid {
+        grid-template-columns:1fr;
+        gap:0px;
+    }
+    .about-skills {
+        text-align:left;
+    }
+    .project-grid {
+        grid-template-columns:1fr;
+    }
+    .skills-grid {
+        max-width:1000px;
+        grid-template-columns:1fr;
+    }
+    .social-icons {
+        grid-template-columns:(2,1fr); 
+        gap:50px;
+    }
+}
+
