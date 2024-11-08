@@ -28,10 +28,12 @@ const Wonder = mongoose.model('Wonder', wonderSchema);
 app.use(express.static(path.join(__dirname, 'public')));
   
 app.get('/api', async (req, res) => {
+  console.log('Received request on /api');
   try {
     const wonders = await Wonder.find();
     res.json(wonders);
   } catch (error) {
+    console.error('Error fetching data:', error);
     res.status(500).send(error);
   }
 });
