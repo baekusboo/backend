@@ -47,6 +47,9 @@ const serveStaticFile = (req, res) => {
 
 const mongoURI = process.env.MONGO_URI;
 
+
+
+
 // Connect to MongoDB
 mongoose.connect(mongoURI)
   .then(() => {
